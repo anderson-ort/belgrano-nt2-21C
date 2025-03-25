@@ -1,0 +1,19 @@
+{
+	"name": "Node.js & Mongo DB",
+	"dockerComposeFile": [
+		"../docker-compose.yml"
+	],
+	// "image": "mcr.microsoft.com/devcontainers/base:alpine-3.20"
+	"service": "container-node",
+	"shutdownAction": "none",
+	"workspaceFolder": "/workspace/container-src",
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"mongodb.mongodb-vscode"
+			]
+		}
+	}
+}

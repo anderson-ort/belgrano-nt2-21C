@@ -1,0 +1,9 @@
+.todo::before {
+    content: "✔";
+    color: green;
+    font-size: 12px;
+    /* position: absolute; */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}

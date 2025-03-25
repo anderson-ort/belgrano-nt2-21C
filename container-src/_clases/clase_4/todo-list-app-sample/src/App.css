@@ -1,42 +1,30 @@
+/* Set the overall body and app container to use grid */
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 20px; /* Adds space between the two grid items */
+  height: 100vh;
+  width: 100vw;
+  grid-template-rows: 1fr; /* Single row layout */
+}
+
+/* Left Side (sidebar) */
+.leftSide {
+  background-color: #f4f4f4;
   padding: 2rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* Main content area */
+.mainSide {
+  background-color: #fff;
+  padding: 20px;
+  overflow-y: auto;
 }
