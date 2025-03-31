@@ -1,0 +1,6 @@
+{
+    "type": "module",
+    "scripts": {
+        "ejercicios":"node ejercicios-finales.js"
+    }
+}
