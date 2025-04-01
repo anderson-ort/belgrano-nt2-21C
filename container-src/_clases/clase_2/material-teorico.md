@@ -148,3 +148,5 @@ Antes de ejecutar el código:
 2. Crea una función que imite el comportamiento de `Array.prototype.map`.
 3. Investiga cómo funcionan las `Closures` en JavaScript y crea un ejemplo.
 
+_[Soluciones Propuestas](./ejercicios-finales.js)_
+
