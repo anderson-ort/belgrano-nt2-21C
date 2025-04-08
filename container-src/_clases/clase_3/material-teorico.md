@@ -1,7 +1,7 @@
 # Clase: Fundamentos y Características Modernas de JavaScript
 
 ## 1. Introducción: ECMAScript vs JavaScript
-
+_Update -> Enfoque directamente con HTML y CSS | JS aplicado a ejemplo final_
 ### ¿Qué es ECMAScript?
 ECMAScript (ES) es el estándar en el que se basa JavaScript. Las versiones más conocidas incluyen:
 - **ES5 (2009)**: Amplia compatibilidad con navegadores.
@@ -75,7 +75,7 @@ async function obtenerDatos() {
 obtenerDatos();
 ```
 
-## 5. Desafío: Simulación de Carga de Datos con JavaScript Moderno
+## 5. Challenge: Simulación de Carga de Datos con JavaScript Moderno
 
 ### Descripción:
 Crea una función `cargarDatos()` que simule la carga de datos desde un servidor con `setTimeout`. Debe devolver una promesa que, tras 3 segundos, resuelva con una lista de usuarios ficticios.

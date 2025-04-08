@@ -1,0 +1,571 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+
+:root {
+    --background-format: #666;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    box-sizing: border-box;
+
+    background-image: url(./assets/receipes-background.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* backdrop-filter: blur(1px); */
+
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+}
+
+
+#app {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+    height: 100%;
+    text-align: center;
+}
+
+.header {
+    grid-column: span 5 / span 5;
+}
+
+.header>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header .icon img {
+
+    width: 60px;
+    height: 60px;
+    vertical-align: middle;
+}
+
+/* navigation styles start here */
+
+header {
+    text-align: center;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+}
+
+
+.logo {
+    color: white;
+
+}
+
+
+
+.typing-demo {
+    width: 22ch;
+    animation: typing 2s steps(13), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid #666;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #555;
+    font-size: 2em;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+
+.acrylic-no-pad {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    margin: 10px;
+    /* width: 50%; */
+    border-radius: 1rem;
+    border: 1px solid #666;
+}
+
+.acrylic {
+
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 0 0 0 5rem;
+}
+
+.nav-toggle {
+    position: absolute !important;
+    top: -9999px !important;
+    left: -9999px !important;
+}
+
+.nav-toggle:focus~.nav-toggle-label {
+    outline: 3px solid rgba(lightblue, .75);
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+    content: '';
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+nav {
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    left: 0;
+    /* background: var(--background-format); */
+    width: 100%;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-bottom: 1em;
+    margin-left: 1em;
+}
+
+nav a {
+    color: var(--background-format);
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+    color: #000;
+}
+
+.nav-toggle:checked~nav {
+    transform: scale(1, 1);
+}
+
+.nav-toggle:checked~nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 800px) {
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .logo {
+        grid-column: 2 / 3;
+    }
+
+    nav {
+        /* // all: unset; this causes issues with Edge, since it's unsupported */
+
+        /* the following lines are not from my video, but add Edge support */
+        position: relative;
+        text-align: left;
+        transition: none;
+        transform: scale(1, 1);
+        background: none;
+        top: initial;
+        left: initial;
+        /* end Edge support stuff */
+
+        grid-column: 3 / 4;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    nav li {
+        margin-left: 3em;
+        margin-bottom: 0;
+    }
+
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: black;
+        position: absolute;
+        top: -.75em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+        transform: scale(1, 1);
+    }
+}
+
+
+
+
+
+
+.div2 {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+    grid-column-start: 2;
+    grid-row-start: 2;
+
+    overflow-y: scroll;
+    justify-items: center;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE y Edge */
+
+    margin: auto;
+
+}
+
+
+.div2::-webkit-scrollbar {
+    display: none;
+}
+
+/* init cards */
+
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.info {
+    flex: 1;
+}
+
+.nombre {
+    margin: 0 0 8px 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.email {
+    margin: 0 0 4px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.edad {
+    margin: 0;
+    color: #888;
+    font-size: 14px;
+}
+
+.original-data {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #f0f4f8;
+    border-radius: 8px;
+}
+
+.original-data h2 {
+    margin-top: 0;
+    color: #2c3e50;
+}
+
+/* fin cards */
+
+
+
+.flags {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+/* .card {
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+    border-left: 5px solid #75b0eb;
+} */
+
+.card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin: 1rem;
+    width: 30%;
+}
+
+.food-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #ffc107;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.food-icon::before {
+    content: "🍽️";
+    font-size: 30px;
+}
+
+.info {
+    flex: 1;
+}
+
+.nombre {
+    margin: 0 0 5px 0;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.metadata {
+    display: flex;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.tiempo,
+.dificultad {
+    display: flex;
+    align-items: center;
+}
+
+.tiempo::before {
+    content: "⏱️";
+    margin-right: 5px;
+}
+
+.dificultad::before {
+    content: "📊";
+    margin-right: 5px;
+}
+
+.ingredientes-title {
+    font-weight: 600;
+    margin: 1.1rem;
+    font-size: 1.1rem;
+    color: #555;
+
+}
+
+.ingredientes-list {
+    line-height: 1.5;
+    color: #555;
+}
+
+
+
+/*formulario para aplicaciaon de callbacks*/
+.form-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.toggle-theme {
+    margin-top: 1rem;
+    background: transparent;
+    aspect-ratio: 1;
+    padding: 0.75rem;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9rem;
+
+    border-radius: 0.5rem;
+    transition:
+        background 0.4s ease,
+        border-radius 0.4s ease,
+        transform 0.3s ease;
+
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+
+    /* Optional: sombra sutil */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-theme:hover {
+    background: linear-gradient(to left, #444, #777, #aaa);
+    border-radius: 50%;
+    transform: scale(1.2);
+}
+
+.toggle-theme-icon {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.toggle-theme.active .toggle-theme-icon {
+    transform: rotate(180deg) scale(1.2);
+}
+
+
+
+
+
+form {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    min-width: 320px;
+    max-width: 400px;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 5rem;
+}
+
+form.dark {
+    background-color: #1f2937;
+    color: #f9fafb;
+}
+
+form.dark input {
+    background-color: #374151;
+    color: #f9fafb;
+    border-color: #4b5563;
+}
+
+form.dark input:focus {
+    border-color: #60a5fa;
+}
+
+form.dark label {
+    color: #d1d5db;
+}
+
+form.dark .mensaje {
+    color: #f87171;
+}
+
+
+
+
+.loader {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #ccc;
+    border-top-color: #333;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.div3 {
+
+    grid-column: span 3 / span 3;
+    grid-column-start: 2;
+    grid-row-start: 5;
+}
