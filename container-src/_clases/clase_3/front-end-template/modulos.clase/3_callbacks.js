@@ -143,6 +143,9 @@ const validateFormCallBackFunctionBascio = (e) => {
         alert("Formulario válido y listo para enviar 🚀");
     }
 }
+
+
+
 const validateFormCallBackFunctionAdvanced = (e) => {
 
     e.preventDefault()
@@ -186,3 +189,48 @@ toggle.addEventListener("click", () => {
         ? "🌞"
         : "🌙";
 });
+
+
+
+
+
+const projectoCalculadora = (num1, num2, cbCalculator) => cbCalculator(num1, num2)
+
+const sumar = (a, b) => a + b
+const resta = (a, b) => a - b
+
+
+const multiplicacion = (a, b) => a * b
+const division = (a, b) => {
+    if (b == 0) {
+        console.error("Que haces zapallo dividien por cero?")
+        return
+    }
+    return a / b
+}
+
+
+
+console.log(
+    projectoCalculadora(1, 2, sumar)
+);
+
+
+console.table(
+    {
+        multiplicacion: projectoCalculadora(2, 3, multiplicacion),
+        resta: projectoCalculadora(2, 3, resta),
+        division: projectoCalculadora(1, 0, division),
+        cosaRara: [1, 2, 3, 3, 4, 4, 5].reduce(
+            (acc, value) => acc + value, 0
+        ),
+        mapper: JSON.stringify([1, 2, 3, 3, 4, 4, 5].map(
+            e => e ** 2
+        ))
+    }
+)
+
+
+
+
+

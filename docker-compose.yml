@@ -5,3 +5,5 @@ services:
     volumes:
       - .:/workspace:cached
     command: sleep infinity
+    ports:
+      - 8080:3001

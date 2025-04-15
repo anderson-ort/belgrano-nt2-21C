@@ -89,3 +89,27 @@ ui.button.addEventListener("click", () => {
     asyncUserLoader.run()
 })
 
+
+
+const url = "https://api.escuelajs.co/api/v1/products"
+
+// const response = fetch(url, {})
+//     .then(res => res.json())
+//     .then(res =>  console.log(res))
+
+
+const getData = async () => {
+    try {
+        const response = await fetch(url, {})
+
+        const data = await response.json()
+        console.log(data)
+    }
+    catch (error) {
+        console.error({ error });
+
+    }
+}
+
+
+getData()

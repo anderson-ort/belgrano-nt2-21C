@@ -156,26 +156,92 @@ function App() {
 export default App;
 ```
 
----
+### Empecemos con lo basico
 
-## 8. React Native
-Framework basado en React para crear apps móviles en iOS y Android.
-```sh
-npx react-native init MiApp
-cd MiApp
-npx react-native start
+
+### 📦 ¿Qué es un **componente** en React?
+
+Un **componente** es una **función** (o clase con herencia de Component, pero hoy se usa casi siempre funciones) que retorna **JSX**, que es una mezcla entre HTML y JS.
+
+Pensalo como una **pieza reutilizable de la interfaz**. Por ejemplo, un botón, una tarjeta de usuario, una navbar, etc.
+
+```jsx
+function Boton() {
+  return <button>Click me</button>;
+}
+```
+
+Ese `Boton` se puede usar en otra parte como si fuera una etiqueta HTML:
+
+```jsx
+<Boton />
 ```
 
 ---
 
-## Conclusión
-React es una herramienta poderosa para el desarrollo frontend moderno. Entender su modelo declarativo, los hooks y las mejores prácticas te permitirá construir aplicaciones eficientes y mantenibles.
+### 📨 ¿Qué son las **props**?
 
-### **Tareas:**
-1. Crear un contador con `useState()`.
-2. Implementar un efecto con `useEffect()`.
-3. Crear un componente reutilizable que reciba props.
-4. Optimizar un cálculo con `useMemo()`.
+Las **props** (abreviación de *properties*) son los **valores que le pasás a un componente** desde otro componente. Es como si le pasaras argumentos a una función.
 
+Ejemplo:
 
+```jsx
+function Saludo(props) {
+  return <h1>Hola, {props.nombre}</h1>;
+}
+```
 
+Uso:
+
+```jsx
+<Saludo nombre="Andru" />
+```
+
+> Props = datos de **solo lectura** que fluyen **de padre a hijo**.
+
+---
+
+### 🔁 ¿Qué es el **estado (state)**?
+
+El **estado** representa los **datos internos** de un componente que **pueden cambiar con el tiempo**, como un contador, el valor de un input, si algo está visible o no, etc.
+
+Usamos `useState`, que es un **hook** (una función especial de React).
+
+```jsx
+import { useState } from 'react';
+
+function Contador() {
+  const [contador, setContador] = useState(0);
+
+  return (
+    <div>
+      <p>Contador: {contador}</p>
+      <button onClick={() => setContador(contador + 1)}>Sumar</button>
+    </div>
+  );
+}
+```
+
+---
+
+### 🧠 Unos conceptos básicos que nos conviene conocer antes o mientras aprendés React
+
+1. **JSX**  
+   Es una sintaxis que parece HTML, pero es JavaScript. Podés usar lógica JS dentro de `{}`:
+
+   ```jsx
+   const nombre = "Andru";
+   return <p>Hola, {nombre}</p>;
+   ```
+
+2. **Componentes son funciones puras**  
+   Cada vez que se renderiza, React vuelve a ejecutar la función del componente.
+
+3. **Estado y props actualizan la UI automáticamente**  
+   Si cambian, React vuelve a renderizar el componente (o parte de él) con los nuevos valores.
+
+4. **Virtual DOM**  
+   React no modifica el DOM directamente, sino que usa una copia virtual, hace los cambios ahí, y luego actualiza el DOM real eficientemente.
+
+5. **Unidirectional data flow**  
+   Los datos fluyen de arriba hacia abajo (de padres a hijos). Nunca al revés, a menos que uses callbacks.

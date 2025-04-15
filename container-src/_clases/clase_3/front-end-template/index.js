@@ -14,6 +14,7 @@ setInterval(looperAnimation, timeSet, ".typing-demo")
 
 // functions
 
+/*
 function counterBy10(counterInit = 10) {
     //  estado inicial
     let counter = counterInit;
@@ -96,9 +97,53 @@ document
 
         }
     )
+*/
 
 
 
+const htmlTemplateDebounce = `
+<br>
+<div >
+<textarea id="editor" placeholder="Escribí algo..."></textarea>
+<p id="status">Estado: ✍️ Escribiendo...</p>
+</div>
+`
+
+
+const debounceSample = document.createElement("div")
+debounceSample.innerHTML = htmlTemplateDebounce
+document.getElementById("main").appendChild(debounceSample)
+
+
+
+const autoSaverDebounce = (delay = 1500) => {
+    let timer;
+
+    const saveToServer = (content) => {
+        console.log("💾 Auto-saving:", content);
+        document.getElementById("status").innerText = "Estado: 💾 Guardado automático";
+    }
+
+    return (content) => {
+        clearTimeout(timer); //se resetea el intento anterior
+        document
+            .getElementById("status")
+            .innerText = "Estado: 🕒 Esperando para guardar...";
+
+        timer = setTimeout(() => saveToServer(content), delay)
+    }
+}
+
+
+const autoSave = autoSaverDebounce(1000)
+
+document.getElementById("editor").addEventListener(
+    "input",
+    (e) => {
+        const text = e.target.value
+        autoSave(text)
+    }
+)
 
 
 

@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "login-react-native-app",
+    "slug": "login-react-native-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/chile.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/chile.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/chile.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.anonymous.loginreactnativeapp"
+    },
+    "web": {
+      "favicon": "./assets/chile.png"
+    }
+  }
+}
