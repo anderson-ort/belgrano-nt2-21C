@@ -1,0 +1,12 @@
+.Presentacion{
+    border: 1px solid #666;
+    border-radius: 1rem;
+    font: 400;
+    justify-content: center;
+    align-items: center;
+}
+
+.Presentacion:hover{
+    background-color: #999;
+}
+

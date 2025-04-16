@@ -1,0 +1,20 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+.ContainerPresentaciones {
+  --cell: min(40vw, 250px);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--cell));
+  grid-auto-rows: var(--cell);
+  gap: 2rem;
+
+  margin: 5rem;
+  min-block-size: 100%;
+  padding-block-end: 50vh;
+  justify-content: center;
+}
