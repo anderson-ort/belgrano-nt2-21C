@@ -1,0 +1,30 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#ff7043">
+    <link rel="stylesheet" href="/styles/styles.css">
+    <title>App de Recetas Offline</title>
+</head>
+
+<body>
+    <h1>Mis Recetas</h1>
+    <form id="form-receta">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <input id="titulo" type="text" name="titulo" placeholder="... Título" required />
+        <textarea id="ingredientes" name="ingredientes" placeholder="... Ingredientes" required></textarea>
+        <textarea id="preparacion" name="preparacion" placeholder="... Preparación" required></textarea>
+        <input type="file" id="imagen" name="imagen" accept="image/*" capture="environment" />
+        <button type="submit">Guardar receta</button>
+    </form>
+    <div id="lista-recetas"></div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

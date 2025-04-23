@@ -1,0 +1,6 @@
+.sidebar-videos {
+    grid-area: sidebar;
+    padding: 1rem;
+    overflow-y: auto;
+    background-color: #1a1a1a;
+}

@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+
+:root {
+    --fontFamily: "Comfortaa", sans-serif;
+    --mainColor: #ff7043;
+    --softBackGround: #0e0d0d7c;
+    --radiusCircle: 5rem;
+    --halfRadiusCircle: calc(var(--radiusCircle) / 2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--fontFamily);
+    background-color: var(--softBackGround);
+    background-image: url(../assets/background.png);
+    color: #e0e0e048;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    color: #ff7043;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* --- Estilos del Formulario --- */
+#form-receta {
+    background: transparent;
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 40px;
+    position: relative;
+    /* Asegurar que el formulario esté sobre los círculos */
+}
+
+#form-receta input[type="text"],
+#form-receta textarea,
+#form-receta input[type="file"],
+#form-receta button {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#form-receta input[type="text"],
+#form-receta textarea,
+#form-receta button {
+    &:focus {
+        outline: none;
+    }
+}
+
+#form-receta input[type="text"],
+#form-receta textarea {
+    background-color: #99999991;
+    color: var(--mainColor);
+    border: 1px solid #555;
+    padding: 12px;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+#form-receta textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+#form-receta input::placeholder,
+#form-receta textarea::placeholder {
+    color: whitesmoke;
+    opacity: 1;
+}
+
+#form-receta input[type="file"] {
+    color: #bbb;
+    padding: 8px 0;
+}
+
+#form-receta input[type="file"]::file-selector-button {
+    background-color: #555;
+    color: #e0e0e0;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.2s ease;
+}
+
+#form-receta input[type="file"]::file-selector-button:hover {
+    background-color: #666;
+}
+
+#form-receta button {
+    background-color: #ff7043;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+#form-receta button:hover {
+    background-color: #f55a2b;
+}
+
+#form-receta button:active {
+    transform: scale(0.98);
+}
+
+/* --- Estilos para la Lista de Recetas --- */
+#lista-recetas {
+    width: 100%;
+    max-width: 500px;
+}
+
+#lista-recetas .receta-item {
+    background-color: #2d2d2d;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border-left: 4px solid #ff7043;
+}
+
+
+#form-receta {
+    position: relative;
+    z-index: 0;
+    background-color: rgba(14, 13, 13, 0.2);
+    /* leve fondo para aplicar mejor el blur */
+}
+
+
+#form-receta .circle {
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 1;
+}
+
+
+
+/* --- Estilos para los círculos decorativos --- */
+.circle {
+    width: var(--radiusCircle);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: absolute;
+    /* Detrás del formulario */
+}
+
+/* Círculo superior izquierdo */
+.circle:first-child {
+    top: calc((var(--halfRadiusCircle) / -2));
+    left: calc((var(--halfRadiusCircle) / -2));
+    background: linear-gradient(to bottom, rgba(235, 58, 87, 0.842), rgb(122, 203, 206));
+    transform: rotate(30deg);
+}
+
+/* Círculo inferior derecho */
+.circle:nth-child(2) {
+    bottom: calc((var(--halfRadiusCircle) / -2));
+    right: calc((var(--halfRadiusCircle) / -2));
+    background: linear-gradient(to bottom, var(--mainColor), rgb(122, 203, 206));
+    transform: rotate(-120deg);
+}

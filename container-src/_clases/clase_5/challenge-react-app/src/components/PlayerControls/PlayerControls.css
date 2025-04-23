@@ -1,0 +1,43 @@
+.player-controls {
+    display: flex;
+    gap: 8px;
+    padding: 10px 0;
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    border: none;
+
+    align-items:first baseline;
+    justify-content: right;
+    margin-right:2rem ;
+}
+
+.player-controls button {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: none;
+    border-radius: 18px;
+    color: #030303;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    height: 36px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.player-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.player-controls button:active {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+/* For the like button with count */
+.player-controls button:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

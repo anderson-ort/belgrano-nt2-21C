@@ -1,0 +1,63 @@
+#root {
+  max-width: 100svw;
+  max-height: 100svh;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  box-sizing:content-box;
+}
+
+.app-container {
+  display: grid;
+  grid-template-areas:
+    "search search"
+    "player sidebar"
+    "controls sidebar";
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: auto 4fr 1fr;
+  height: 100vh;
+
+  color: white;
+
+}
+
+.search-bar {
+  grid-area: search;
+}
+
+.video-player {
+  grid-area: player;
+}
+
+.player-controls {
+  grid-area: controls;
+}
+
+.sidebar-videos {
+  grid-area: sidebar;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.sidebar-videos::-webkit-scrollbar {
+  display: none;
+  /* Chrome, Safari, Opera */
+}
+
+.blurred-background>*:not(.video-player.theater) {
+  filter: blur(2px);
+  transition: filter 0.3s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+.blurred-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
