@@ -131,6 +131,18 @@
         "user"
       ],
       "githubAlias": "AntonioCardenas"
+    },
+    {
+      "id": "3876c83d-d302-4674-bea5-eb7ebb10298d",
+      "password": "123",
+      "permissions": [
+        "read:recipes",
+        "write:recipes"
+      ],
+      "roles": [
+        "user"
+      ],
+      "githubAlias": "clariredal"
     }
   ]
 }
