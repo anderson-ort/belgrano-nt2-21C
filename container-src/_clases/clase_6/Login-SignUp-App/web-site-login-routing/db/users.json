@@ -1,0 +1,136 @@
+{
+  "userAuth": [
+    {
+      "id": "e0f7d13a-1234-4e5b-8c2e-7abc12345678",
+      "password": "diego123",
+      "permissions": [
+        "read:recipes",
+        "write:recipes",
+        "admin:settings"
+      ],
+      "roles": [
+        "admin"
+      ],
+      "githubAlias": "DiegoJavOlivera"
+    },
+    {
+      "id": "a1e8d5bc-5678-4d4e-9b3a-8def98765432",
+      "password": "123",
+      "permissions": [
+        "read:recipes",
+        "write:recipes"
+      ],
+      "roles": [
+        "vip"
+      ],
+      "githubAlias": "eliseocutrona"
+    },
+    {
+      "id": "f3c6b2de-9101-4e3b-8a1d-7bc123ef4567",
+      "password": "abner789",
+      "permissions": [
+        "read:recipes"
+      ],
+      "roles": [
+        "user"
+      ],
+      "githubAlias": "AbnerGarcia96"
+    },
+    {
+      "id": "b2d5f1e8-2345-4c7d-8e9f-1abc23456789",
+      "password": "antonio321",
+      "permissions": [
+        "read:recipes",
+        "write:recipes"
+      ],
+      "roles": [
+        "user"
+      ],
+      "githubAlias": "AntonioCardenas"
+    },
+    {
+      "id": "5a3dc884-f911-4b1a-a041-c5f415083aab",
+      "password": "123",
+      "permissions": [
+        "read:recipes",
+        "write:recipes"
+      ],
+      "roles": [
+        "user"
+      ],
+      "githubAlias": "Andru-1987"
+    },
+    {
+      "id": "438ced6e-cc21-4ddc-9e0f-3ed13d900a56",
+      "password": "123",
+      "permissions": [
+        "read:recipes",
+        "write:recipes"
+      ],
+      "roles": [
+        "user"
+      ],
+      "githubAlias": "roxsross"
+    },
+    {
+      "id": "4bbbc777-e02e-4f28-ada3-ca55430b0264",
+      "password": "123",
+      "permissions": [
+        "read:recipes",
+        "write:recipes"
+      ],
+      "roles": [
+        "user"
+      ],
+      "githubAlias": "claudiop1975"
+    },
+    {
+      "id": "49405f0f-3880-4ff7-8acc-3b3ea2834fae",
+      "password": "123",
+      "permissions": [
+        "read:recipes",
+        "write:recipes"
+      ],
+      "roles": [
+        "user"
+      ],
+      "githubAlias": "claudiop1975"
+    },
+    {
+      "id": "1ce7ec1a-fb40-4da2-97d7-2f382fc2fe2c",
+      "password": "123",
+      "permissions": [
+        "read:recipes",
+        "write:recipes"
+      ],
+      "roles": [
+        "user"
+      ],
+      "githubAlias": "claudiop1975"
+    },
+    {
+      "id": "73d1143b-04a7-4c68-936a-bd144c4fa6a8",
+      "password": "123",
+      "permissions": [
+        "read:recipes",
+        "write:recipes"
+      ],
+      "roles": [
+        "user"
+      ],
+      "githubAlias": "Orliluq"
+    },
+    {
+      "id": "369631e6-94f6-4b58-a44a-f19266b94134",
+      "password": "antonio321",
+      "permissions": [
+        "read:recipes",
+        "write:recipes"
+      ],
+      "roles": [
+        "user"
+      ],
+      "githubAlias": "AntonioCardenas"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+/* RepositoryCard.css - Vanilla CSS for Repository Card Component */
+
+.repository-card {
+    max-width: 500px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 24px;
+    transition: all 0.3s ease;
+    margin: 16px 0;
+    font-family: monospace;
+}
+
+.repository-card.hovered {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.repository-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.repository-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.repository-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.repository-icon {
+    color: #8e8e8e;
+    transition: color 0.2s ease;
+}
+
+.repository-icon:hover {
+    color: white;
+}
+
+.repository-description {
+    color: #b3b3b3;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.repository-footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #8e8e8e;
+}
+
+.repository-language {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.repository-url {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #8e8e8e;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.repository-url:hover {
+    color: #64b5f6;
+}
+
+.repository-url span {
+    text-decoration: underline;
+}

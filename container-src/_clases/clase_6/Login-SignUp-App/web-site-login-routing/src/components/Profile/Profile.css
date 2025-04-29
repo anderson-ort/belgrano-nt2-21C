@@ -1,0 +1,20 @@
+.cardList {
+    overflow-y: scroll;
+    height: 100%;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE/Edge */
+
+    /* Solo oculta la barra en navegadores WebKit (Chrome, Safari) */
+}
+
+.cardList::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari y Opera */
+}
+
+
+.cardList {
+    scrollbar-gutter: stable both-edges;
+}
