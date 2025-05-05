@@ -20,6 +20,11 @@ npm install axios
 npm install -g json-server@0.17.4
 npm install --save-dev --save-exact @biomejs/biome
 npx @biomejs/biome init
+
+# dar de alta la api de json-server
+npx json-server ./src/users.json --port 5000
+
+
 ```
 
 ---
