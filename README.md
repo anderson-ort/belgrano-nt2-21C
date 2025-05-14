@@ -19,7 +19,7 @@ Podés acceder a los videos de las clases desde el siguiente enlace:
 
 ## Un recordatorio para todos los programadores
 
-![alt text](image.png)
+![Clean Code](assets/clean_code.png)
 
 📩 **Contacto**  
 Ante cualquier duda, podés escribirme por el foro del aula o también a mi correo:  
@@ -70,10 +70,10 @@ Ante cualquier duda, podés escribirme por el foro del aula o también a mi corr
     - `ui/` → componentes
     </details>
 
-- Clase 8
-- Clase 9
-- Clase 10
-- Clase 11
+- **Clase 8**: ReactJs App -> PWA Vite | Generacion del proyecto personal
+- **Clase 9**: Puntos Principales del proyecto | Armado de repositorio | Deploy
+- **Clase 10**: React Native Basic Principles
+- **Clase 11**: Proyectos Finales
 
 ---
 **Links adicionales**
