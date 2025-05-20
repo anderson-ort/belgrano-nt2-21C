@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { getAllRecetas } from '../service/receta.service'
 import RecetaItem from './RecetaItem'
 import "./RecetasList.css"
+import Loader from '../../../components/Loader/Loader'
 const RecetasList = () => {
   const [recetas, setRecetas] = useState([])
   const [loading, setLoading] = useState(true)
@@ -23,7 +24,7 @@ const RecetasList = () => {
     fetchRecetas()
   }, [])
 
-  if (loading) return <p>Cargando recetas...</p>
+  if (loading) return <Loader />
   if (error) return <p>{error}</p>
   if (recetas.length === 0) return <p>No hay recetas disponibles.</p>
 
@@ -33,7 +34,6 @@ const RecetasList = () => {
         <RecetaItem
           key={receta.id}
           id={receta.id}
-
           nombre={receta.nombre}
           imagen={receta.imagen}
           puntuacion={receta.puntuacion}

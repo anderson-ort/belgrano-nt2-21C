@@ -2,9 +2,15 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import './RecetaDetail.css'
 import { getRecipeById } from '../../service/receta.service'
+import Loader from '../../../../components/Loader/Loader'
+import AddFavorites from '../../../../components/AddFavorites/AddFavorites'
+import useUserStore from '../../../../stores/useUserStore'
 
 const RecipeDetail = () => {
-    const { id } = useParams()
+    let { id } = useParams()
+    id = Number(id)
+    const { user } = useUserStore()
+
     const navigate = useNavigate()
     const [receta, setReceta] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -31,7 +37,7 @@ const RecipeDetail = () => {
         return '★'.repeat(puntos) + '☆'.repeat(max - puntos)
     }
 
-    if (loading) return <p>Cargando receta...</p>
+    if (loading) return <Loader />
     if (error) return <p>{error}</p>
     if (!receta) return <p>No se encontró la receta.</p>
 
@@ -67,6 +73,7 @@ const RecipeDetail = () => {
             </div>
 
             <h4>Puntuación: <span className="recipe-rating">{renderEstrellas(receta.puntuacion)}</span></h4>
+            {user && <AddFavorites id={id} />}
             <button onClick={() => navigate('/')} className="back-button">← Volver a Recetas</button>
         </div>
     )

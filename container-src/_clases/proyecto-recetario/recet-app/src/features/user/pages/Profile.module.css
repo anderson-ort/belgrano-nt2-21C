@@ -1,0 +1,54 @@
+.profileContainer {
+    padding: 2rem;
+    max-width: 960px;
+    margin: auto;
+}
+
+.profileInfo {
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.addRecipeBox {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.addRecipeBox input {
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+.addRecipeBox button {
+    padding: 0.5rem;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.addRecipeBox button:hover {
+    background-color: #005fa3;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}
+
+.recipeGrid {
+    display: grid;
+    margin: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}

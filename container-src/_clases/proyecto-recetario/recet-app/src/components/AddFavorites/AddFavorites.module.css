@@ -1,0 +1,20 @@
+.favBtn {
+    margin-top: 1.5rem;
+    padding: 0.6rem 1rem;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.favBtn[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.favStatus {
+    margin-top: 0.5rem;
+    font-style: italic;
+}
