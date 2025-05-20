@@ -1,7 +1,9 @@
 [
   {
+    "id": 1,
     "nombre": "Pastel de la cosecha de otoño",
     "imagen": "https://cdn.nutritionstudies.org/wp-content/uploads/2022/12/2-768x512.jpg",
+    "descripcion": "Un pastel vegetal horneado con frijoles, puré de papas y migas de pan, perfecto para los días frescos de otoño.",
     "ingredientes": [
       "1 cebolla amarilla mediana, picada finamente",
       "3 dientes de ajo grandes, pelados, partidos por la mitad y picados finamente",
@@ -33,7 +35,9 @@
     "puntuacion": 5
   },
   {
+    "id": 2,
     "nombre": "Tostadas de frijoles pintos con salsa de aguacate",
+    "descripcion": "Crujientes tostadas de maíz con frijoles machacados, repollo y una fresca salsa cremosa de aguacate.",
     "imagen": "https://cdn.nutritionstudies.org/wp-content/uploads/2023/06/pinto-bean-tostadas-with-avocado-salsa-2-3-768x512.jpg",
     "ingredientes": [
       "Tortillas de maíz",
@@ -61,8 +65,10 @@
     "puntuacion": 5
   },
   {
+    "id": 3,
     "nombre": "Pasta con salsa Alfredo de coliflor",
     "imagen": "https://cdn.nutritionstudies.org/wp-content/uploads/2022/06/pasta-alfredo-bowl-1024x683.jpg",
+    "descripcion": "Una versión más ligera de la clásica Alfredo, hecha con coliflor y leche vegetal, ideal para una comida reconfortante.",
     "ingredientes": [
       "1 libra (453 g) de pasta de tu elección",
       "1 cabeza mediana de coliflor",
@@ -83,7 +89,9 @@
     "puntuacion": 3
   },
   {
+    "id": 4,
     "nombre": "Curry de garbanzos y espinaca",
+    "descripcion": "Curry especiado de garbanzos con espinaca y leche de coco, sabroso y nutritivo, ideal para acompañar con arroz.",
     "imagen": "https://cdn.nutritionstudies.org/wp-content/uploads/2020/06/sopa-de-garbanzos.jpg",
     "ingredientes": [
       "1 cebolla mediana picada",
@@ -108,8 +116,10 @@
     "puntuacion": 4
   },
   {
+    "id": 5,
     "nombre": "Bowl de quinoa con vegetales asados",
     "imagen": "https://cdn.nutritionstudies.org/wp-content/uploads/2016/03/recipe-Red-Quinoa-Enchiladas-Rojas.jpg",
+    "descripcion": "Un bowl lleno de color con quinoa y vegetales asados al horno, aderezado con limón y comino.",
     "ingredientes": [
       "1 taza de quinoa cocida",
       "1 pimiento rojo cortado en tiras",

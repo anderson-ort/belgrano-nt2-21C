@@ -1,0 +1,31 @@
+.NavBar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+}
+
+.NavBar__logo {
+    width: 32px;
+    height: 32px;
+}
+
+.NavBar__separator {
+    color: #999;
+}
+
+.NavBar__link {
+    text-decoration: none;
+    color: #666;
+    font-weight: normal;
+    transition: color 0.2s ease-in-out;
+}
+
+.NavBar__link--active {
+    color: #000;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+}
