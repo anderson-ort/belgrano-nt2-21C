@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 import { getAllRecetas } from '../service/receta.service'
 import RecetaItem from './RecetaItem'
 
+import styles from "./RecetasList.module.css"
+
+
 const RecetasList = () => {
 
   const [recetas, setRecetas] = useState(null)
@@ -22,10 +25,17 @@ const RecetasList = () => {
 
 
   return (
-    <div>
+    <div className={styles.RecetasGrid}>
       {recetas &&
         recetas.map(
-          (r,i) => <RecetaItem key={i} nombre={r.nombre} />
+          (receta) => <RecetaItem
+            key={receta.id}
+            id={receta.id}
+            nombre={receta.nombre}
+            imagen={receta.imagen}
+            puntuacion={receta.puntuacion}
+            descripcion={receta.descripcion}
+          />
         )
       }
 

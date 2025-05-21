@@ -1,0 +1,156 @@
+/* NavBar.css */
+
+.NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    padding: 1rem 2rem;
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.NavBar__left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.NavBar__logo {
+    height: 32px;
+    width: auto;
+}
+
+.NavBar__separator {
+    margin: 0 0.5rem;
+    color: #888;
+    font-weight: bold;
+}
+
+.NavBar__brand {
+    font-weight: bold;
+    color: whitesmoke;
+    font-size: 1.1rem;
+}
+
+.NavBar__links {
+    display: flex;
+    gap: 1rem;
+}
+
+.NavBar__link {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.NavBar__link:hover {
+    color: #888;
+}
+
+.NavBar__link--active {
+    border-bottom: 2px solid #888;
+    color: #888;
+}
+
+.NavBar__toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+.NavBar__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    z-index: 90;
+}
+
+.NavBar__right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.NavBar__user {
+    color: #ddd;
+    font-size: clamp(0.8rem, 1vw, 1rem);
+    max-width: 350px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+
+.NavBar__link--button {
+    background: none;
+    border: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    padding: 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+
+    .NavBar__user {
+        color: transparent;
+        /* oculta el texto */
+        font-size: 1.2rem;
+        max-width: 1.2em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        position: relative;
+    }
+
+    .NavBar__user::before {
+        content: "👤";
+        position: absolute;
+        left: 0;
+        color: #ddd;
+    }
+
+    .NavBar__links {
+        position: fixed;
+        top: 64px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
+        flex-direction: column;
+        width: 200px;
+        padding: 1rem;
+        gap: 1rem;
+        border-radius: 0 0 0 12px;
+        transform: translateX(100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        z-index: 99;
+        backdrop-filter: blur(8px);
+
+    }
+
+    .NavBar__links.is-active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .NavBar__toggle {
+        display: block;
+    }
+}
