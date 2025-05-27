@@ -1,2 +1,2 @@
-Transformacion de Proyecto de React -> PWA
-Deploy -> usando GitHub actions -> Disponibilizar para entrega final
+- Transformacion de Proyecto de React -> PWA
+- Deploy -> usando GitHub actions -> Disponibilizar para entrega final
