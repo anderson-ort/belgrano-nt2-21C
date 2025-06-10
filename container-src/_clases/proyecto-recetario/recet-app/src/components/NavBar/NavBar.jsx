@@ -4,6 +4,8 @@ import { NavLink, useNavigate } from 'react-router';
 
 import chile from '/chile.png';
 import './NavBar.css';
+import { useUserStorage } from '../../stores/useUserStorage';
+import { supabase } from '../../auth/supabase.auth';
 
 const NavBar = () => {
 
@@ -11,24 +13,22 @@ const NavBar = () => {
 
     const [loading, setLoading] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false);
-    //   const { user } = useUserStore();
-    const user= null
+    const { user, reset } = useUserStorage();
     const closeMenu = () => setMenuOpen(false);
     const linkClass = ({ isActive }) =>
         isActive ? 'NavBar__link NavBar__link--active' : 'NavBar__link';
 
     const handleSignOut = async () => {
-        // setLoading(true);
-
-        // try {
-        //   await supabase.auth.signOut();
-        //   useUserStore.getState().reset();
-        //   navigate("/");
-        // } catch (error) {
-        //   console.error("Error al cerrar sesión:", error.message);
-        // } finally {
-        //   setLoading(false); // 🔚 ocultar loader
-        // }
+        setLoading(true);
+        try {
+            await supabase.auth.signOut();
+            reset();
+            navigate("/");
+        } catch (error) {
+            console.error("Error al cerrar sesión:", error.message);
+        } finally {
+            setLoading(false); // 🔚 ocultar loader
+        }
     };
 
 

@@ -2,11 +2,6 @@ import { supabase } from "../../../auth/supabase.auth"
 
 
 export const getAllRecetas = async () => {
-    // const res = await fetch("../../../db/recetas_nutrition_studies.json")
-    // const data = await res.json()
-
-    // return data
-
     let { data: recipes, error } = await supabase
         .from('recipes')
         .select('*')
@@ -17,6 +12,22 @@ export const getAllRecetas = async () => {
 
 export const getRecetaById = async (id) => {
     let { data, error } = await supabase.from('recipes').select("*").eq('id', id).single()
- 
+    return data
+}
+
+
+export const fetchAllRecetasById = async (ids) => {
+    if (!ids || ids.length === 0) return []
+
+    const { data, error } = await supabase
+        .from("recipes")
+        .select("*")
+        .in("id", ids)
+
+    if (error) {
+        console.error("Error al obtener recetas por IDs:", error)
+        throw error
+    }
+
     return data
 }

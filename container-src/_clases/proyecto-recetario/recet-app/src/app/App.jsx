@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router"
 import "./App.css"
-import Router from "./router"
+import Router from "./Router"
 import NavBar from "../components/NavBar/NavBar"
 
 const App = () => {

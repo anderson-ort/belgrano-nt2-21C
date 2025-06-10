@@ -5,12 +5,20 @@ import styles from "./AddFav.module.css"
 
 const AddFav = ({ id }) => {
     const normalizedId = Number(id)
-    const { user, favoriteIds, addFavorite } = useUserStorage()
+    const { favoriteIds, addFavorite, removeFavorite } = useUserStorage()
 
     const isFav = favoriteIds.includes(normalizedId)
 
-    const handleToggleFav = () => { 
-        addFavorite(normalizedId)
+    const handleToggleFav = async () => {
+
+        if (isFav) {
+
+            await removeFavorite(normalizedId)
+            return
+        }
+
+        await addFavorite(normalizedId)
+        return
     }
 
     return (

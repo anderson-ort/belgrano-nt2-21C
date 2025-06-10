@@ -20,20 +20,23 @@ export default function SignIn() {
     try {
 
       const { user } = await signIn(emailRef.current.value, passwordRef.current.value);
-      setUser(user)
 
+      setUser(user)
 
       const { data: fav, error } = await supabase
         .from("favorites")
-        .select("receipe_id")
+        .select("recipe_id")
         .eq("user_id", user.id)
 
-      setFavorites(fav ? [] : fav.map(f => f.receipe_id))
+
+      let setInitData = fav ? fav.map(f => f.recipe_id) : []
+
+      setFavorites(setInitData)
 
       navigate("/profile")
     } catch (err) {
       console.error(err.message);
-      setError('Email o contraseña incorrectos');
+      setError(err.message);
     } finally {
       setLoading(false);
     }
